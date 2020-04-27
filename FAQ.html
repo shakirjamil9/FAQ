@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            height: 60vh;
+            width: 60%;
+            overflow: hidden;
+            border: 1px solid ;
+        }
+        .heading{
+            text-align: center;
+            font-size: 25px;
+            width: 100%;
+            height: 5.5vh;
+            padding-top: 5px;
+            background: greenyellow;
+        }
+        .question{
+            /* text-align: center; */
+            font-size: 20px;
+            width: 100%;
+            height: 4.5vh;
+            background: rgb(238, 230, 230);
+            padding-top: 5px;
+            padding-left: 50px;
+            cursor: pointer;
+        }
+        .answer{
+            /* font-size: 20px; */
+            width: 100%;
+            height: 4.5vh;
+            background: rgb(143, 140, 140);
+            padding-top: 5px;
+            padding-left: 50px;
+            display: none;
+        }
+        img{
+            /* position: absolute; */
+            width: 1.5vw;
+            /* margin-left: -10px; */
+            position: relative;
+            left: -10px;
+            transition: 0.8s;
+        }
+        .imgRotation{
+            transform: rotate(90deg);
+            transition: 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">FAQ Slider Project</div>
+        <div class="question" onclick="followMe(event)"> <img src="arrow.png" alt=""> How are you?</div>
+        <div class="answer">I am fine.</div> <hr>
+        <div class="question"onclick="followMe(event)"> <img src="arrow.png" alt=""> Who are you?</div>
+        <div class="answer">I am Developer.</div> <hr>
+        <div class="question"onclick="followMe(event)"> <img src="arrow.png" alt="">Your Purpose?</div>
+        <div class="answer">Kuch vi ni</div> <hr>
+        <div class="question"onclick="followMe(event)"> <img src="arrow.png" alt="">Uni konsi?</div>
+        <div class="answer">Koi vi ni.</div> <hr>
+        <div class="question"onclick="followMe(event)"> <img src="arrow.png" alt="">How are you?</div>
+        <div class="answer">I am fine.</div> <hr>
+        <div class="question"onclick="followMe(event)"> <img src="arrow.png" alt="">How are you?</div>
+        <div class="answer">I am fine.</div> <hr>
+        <div class="question"onclick="followMe(event)"> <img src="arrow.png" alt="">How are you?</div>
+        <div class="answer">I am fine.</div> <hr>
+        <div class="question"onclick="followMe(event)"> <img src="arrow.png" alt="">How are you?</div>
+        <div class="answer">I am fine.</div> <hr>
+        <div class="question"onclick="followMe(event)"> <img src="arrow.png" alt="">How are you?</div>
+        <div class="answer">I am fine.</div> <hr>
+    </div>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        function followMe(e){
+            var x = $(e.target).next().slideToggle(500);
+            $('.answer').not(x).slideUp(500);
+            var y = $(e.target).children("img").toggleClass('imgRotation');
+            $(y).not('img');
+            $('img').not(y).removeClass('imgRotation')
+        }
+    </script>
+</body>
+</html>
